@@ -11,7 +11,8 @@ class DestinationsController < ApplicationController
   # GET /destinations/1.json
   def show
     response = Faraday.get("http://api.wunderground.com/api/#{ENV["weather_api_key"]}/forecast10day/q/80205.json")
-    @weather = JSON.parse(response.body)['forecast']['simpleforecast']['forecastday']
+    parsed_response = JSON.parse(response.body, symbolize_names: true)[:forecast][:simpleforecast][:forecastday]
+    @ten_day_forecast = WeatherDay.create_days(parsed_response)
   end
 
   # GET /destinations/new
