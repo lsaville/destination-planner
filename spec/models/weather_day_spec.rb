@@ -8,8 +8,8 @@ describe 'weather_day' do
                                 :monthname => 'January',
                                 :day => '10'
                                 },
-                      :high => '49',
-                      :low  => '27',
+                      :high => {:fahrenheit =>'49', :celsius => '3'},
+                      :low  => {:fahrenheit => '29', :celsius => '3'},
                       :conditions => 'Clear'
                      }
       day = WeatherDay.new(weather_info)
@@ -18,7 +18,7 @@ describe 'weather_day' do
       expect(day.month).to eq("January")
       expect(day.date).to eq("10")
       expect(day.high).to eq("49")
-      expect(day.low).to eq("27")
+      expect(day.low).to eq("29")
       expect(day.conditions).to eq("Clear")
     end
 
@@ -29,8 +29,8 @@ describe 'weather_day' do
                                    :monthname => 'January',
                                    :day => '10'
                                    },
-                         :high => '49',
-                         :low  => '27',
+                         :high => {:fahrenheit =>'49', :celsius => '3'},
+                         :low  => {:fahrenheit => '27', :celsius => '3'},
                          :conditions => 'Clear'
                         }
         
@@ -39,8 +39,8 @@ describe 'weather_day' do
                                    :monthname => 'January',
                                    :day => '11'
                                    },
-                         :high => '56',
-                         :low  => '23',
+                         :high => {:fahrenheit =>'56', :celsius => '3'},
+                         :low  => {:fahrenheit => '23', :celsius => '3'},
                          :conditions => 'Cloudy'
                         }
         
