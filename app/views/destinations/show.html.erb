@@ -26,11 +26,11 @@
         <th>Low</th> 
         <th>Conditions</th> 
       </tr> 
-      <% @weather.each do |day| %>
-        <th><%= day['date']['weekday'] %> <%= day['date']['monthname'] %> <%= day['date']['day']%></th>
-        <th><%= day['high'] %></th>
-        <th><%= day['low'] %></th>
-        <th><%= day['conditions'] %></th>
+      <% @ten_day_forecast.each do |day| %>
+        <th><%= "#{day.weekday} #{day.month} #{day.date}"%></th>
+        <th><%= day.high %></th>
+        <th><%= day.low %></th>
+        <th><%= day.conditions %></th>
       <% end %>
     </table>    
   </div>
