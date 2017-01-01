@@ -1,0 +1,3 @@
+class WeatherDay
+
+end
