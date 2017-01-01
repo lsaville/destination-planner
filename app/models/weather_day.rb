@@ -4,8 +4,8 @@ class WeatherDay
     @weekday    = raw_weather[:date][:weekday]
     @month      = raw_weather[:date][:monthname]
     @date       = raw_weather[:date][:day]
-    @high       = raw_weather[:high]
-    @low        = raw_weather[:low] 
+    @high       = raw_weather[:high][:fahrenheit]
+    @low        = raw_weather[:low][:fahrenheit]
     @conditions = raw_weather[:conditions]
   end
 
