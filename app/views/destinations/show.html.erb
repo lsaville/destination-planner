@@ -19,7 +19,7 @@
 
   <div class="row">
     <h4>Forecast for <%= @destination.name %>:</h4>
-    <table>
+    <table class="table table-striped">
       <tr>
         <th>Date</th> 
         <th>High</th> 
@@ -27,10 +27,12 @@
         <th>Conditions</th> 
       </tr> 
       <% @ten_day_forecast.each do |day| %>
-        <th><%= "#{day.weekday} #{day.month} #{day.date}"%></th>
-        <th><%= day.high %></th>
-        <th><%= day.low %></th>
-        <th><%= day.conditions %></th>
+        <tr>
+          <td><%= "#{day.weekday} #{day.month} #{day.date}"%></td>
+          <td><%= day.high %></td>
+          <td><%= day.low %></td>
+          <td><%= day.conditions %></td>
+        </tr>
       <% end %>
     </table>    
   </div>
