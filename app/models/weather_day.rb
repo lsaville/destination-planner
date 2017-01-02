@@ -9,9 +9,10 @@ class WeatherDay
     @conditions = raw_weather[:conditions]
   end
 
-  def self.create_days(array_of_raw_weather)
-    array_of_raw_weather.map do |raw_weather|
-      WeatherDay.new(raw_weather)
+  def self.create_days(zipcode)
+    weather_data = WeatherService.new(zipcode).ten_day_forecast
+    weather_data.map do |raw_weather_day|
+      WeatherDay.new(raw_weather_day)
     end
   end
 end
